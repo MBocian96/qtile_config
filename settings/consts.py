@@ -12,4 +12,5 @@ colors = [["#282c34", "#282c34"],
 
 terminal = 'kgx'
 mod = "mod4"
+alt = "mod2"
 rofi = "/home/mbocian/.config/rofi/launchers/colorful/launcher.sh"
