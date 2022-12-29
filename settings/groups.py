@@ -14,9 +14,10 @@ def init_groups(keys):
         Group("6", label="Misc", init=False, screen_affinity=2, matches=[Match(wm_class=[])]),
         Group("7", label="Files", screen_affinity=2, matches=[Match(wm_class=["org.gnome.Nautilus"])]),
         Group("8", label="Spotify", screen_affinity=2, matches=[Match(wm_class=["spotify"])]),
-        Group("9", label="Discord", screen_affinity=2, matches=[Match(wm_class=["discord"])]),
+        Group("9", label="Discord", init=False, screen_affinity=2, matches=[Match(wm_class=["discord"])]),
         Group("0", label="Teams", screen_affinity=2, matches=[Match(wm_class=["microsoft teams - preview"])]),
     ]
+
     for group in workspaces:
         keys.extend(
             [
