@@ -39,7 +39,7 @@ from settings.screens import init_screen
 keys = init_keys()
 groups = init_groups(keys)
 layouts = init_layouts()
-screens = [init_screen() for _ in range(2)]
+screens = [init_screen(), init_screen(), init_screen()]
 
 widget_defaults = dict(
     font="sans",
