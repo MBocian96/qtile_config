@@ -6,16 +6,16 @@ from settings.consts import mod
 
 def init_groups(keys):
     workspaces = [
-        Group("1", label="Terminal", screen_affinity=1),
-        Group("2", label="Brave", screen_affinity=1, matches=[Match(wm_class=["brave-browser"])]),
-        Group("3", label="Charm", screen_affinity=1, matches=[Match(wm_class=["jetbrains-pycharm"])]),
-        Group("4", label="Settings", screen_affinity=1, matches=[Match(wm_class=["blueman-manager", "pavucontrol"])]),
-        Group("5", label="Misc", init=False, screen_affinity=1, matches=[Match(wm_class=[])]),
-        Group("6", label="Misc", init=False, screen_affinity=2, matches=[Match(wm_class=[])]),
-        Group("7", label="Files", screen_affinity=2, matches=[Match(wm_class=["org.gnome.Nautilus"])]),
-        Group("8", label="Spotify", screen_affinity=2, matches=[Match(wm_class=["spotify"])]),
-        Group("9", label="Discord", init=False, screen_affinity=2, matches=[Match(wm_class=["discord"])]),
-        Group("0", label="Teams", screen_affinity=2, matches=[Match(wm_class=["microsoft teams - preview"])]),
+        Group("1", label="", screen_affinity=1),
+        Group("2", label="", screen_affinity=1, matches=[Match(wm_class=["brave-browser"])]),
+        Group("3", label="", screen_affinity=1, matches=[Match(wm_class=["jetbrains-pycharm"])]),
+        Group("4", label="⚙", screen_affinity=1, matches=[Match(wm_class=["blueman-manager", "pavucontrol"])]),
+        Group("5", label="○", init=False, screen_affinity=1, matches=[Match(wm_class=[])]),
+        Group("6", label="○", init=False, screen_affinity=2, matches=[Match(wm_class=[])]),
+        Group("7", label="", screen_affinity=2, matches=[Match(wm_class=["org.gnome.Nautilus"])]),
+        Group("8", label="♫", screen_affinity=2, matches=[Match(wm_class=["spotify"])]),
+        Group("9", label="", init=False, screen_affinity=2, matches=[Match(wm_class=["discord"])]),
+        Group("0", label="👥", screen_affinity=2, matches=[Match(wm_class=["microsoft teams - preview"])]),
     ]
 
     for group in workspaces:
