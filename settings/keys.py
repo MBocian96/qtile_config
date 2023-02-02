@@ -54,7 +54,6 @@ def init_keys():
         Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
         Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
         Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
-	
 
         Key([mod], "s", lazy.spawn("gnome-screenshot -i")),
     ]

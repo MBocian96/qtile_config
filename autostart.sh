@@ -10,4 +10,7 @@ com.microsoft.Teams &
 nautilus &
 pavucontrol &
 blueman-manager &
-playerctlc
+playerctlc &
+redshift -O 3400 &
+picom
+

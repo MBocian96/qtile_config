@@ -3,9 +3,6 @@ from libqtile.config import Screen
 
 from settings.consts import colors, terminal
 
-terminal = 'kgx'
-
-
 def init_screen():
     return Screen(
         top=bar.Bar(
