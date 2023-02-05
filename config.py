@@ -25,9 +25,8 @@
 # SOFTWARE.
 from groups_settings import init_groups
 from keys_settings import init_keys
-from layout_settings import init_layout
-from libqtile import layout
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from layout_settings import init_layout, init_floating
+from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.layout.base import Layout
 from mouse_settings import init_mouse
 from screen_settings import init_screens
@@ -38,11 +37,8 @@ groups: list[Group] = init_groups(keys)
 
 layouts: list[Layout] = init_layout()
 
-widget_defaults = dict(
-    font="sans",
-    fontsize=12,
-    padding=3,
-)
+widget_defaults = dict(font="sans", fontsize=12, padding=3)
+
 extension_defaults = widget_defaults.copy()
 
 screens: list[Screen] = init_screens()
@@ -55,18 +51,7 @@ dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(
-    float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
-        *layout.Floating.default_float_rules,
-        Match(wm_class="confirmreset"),  # gitk
-        Match(wm_class="makebranch"),  # gitk
-        Match(wm_class="maketag"),  # gitk
-        Match(wm_class="ssh-askpass"),  # ssh-askpass
-        Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
-    ]
-)
+floating_layout = init_floating()
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
