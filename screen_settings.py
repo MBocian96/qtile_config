@@ -4,7 +4,7 @@ from libqtile.config import Screen
 
 def init_screen():
     return Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.GroupBox(),
                 widget.Chord(
