@@ -60,4 +60,13 @@ def user_keys() -> list[Key]:
         Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
 
         Key([mod], "s", lazy.spawn("gnome-screenshot -i")),
+
+        Key([mod], "period",
+            lazy.next_screen(),
+            desc='Move focus to next monitor'
+            ),
+        Key([mod], "comma",
+            lazy.prev_screen(),
+            desc='Move focus to prev monitor'
+            ),
     ]
