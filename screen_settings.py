@@ -27,3 +27,7 @@ def init_screen():
             24,
         ),
     )
+
+
+def init_screens():
+    return [init_screen(), init_screen(), init_screen(), ]

@@ -28,10 +28,10 @@ from groups_settings import init_groups
 from keys_settings import init_keys
 from layout_settings import init_layout
 from libqtile import layout
-from libqtile.config import Click, Drag, Group, Key, Match
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.layout.base import Layout
 from libqtile.lazy import lazy
-from screen_settings import init_screen
+from screen_settings import init_screens
 
 keys: list[Key] = init_keys()
 
@@ -46,11 +46,7 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-screens = [
-    init_screen(),
-    init_screen(),
-    init_screen(),
-]
+screens: list[Screen] = init_screens()
 
 # Drag floating layouts.
 mouse = [
