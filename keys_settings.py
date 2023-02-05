@@ -43,5 +43,21 @@ def init_keys():
         Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
         Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
         Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    ] + user_keys()
+
+
+def user_keys() -> list[Key]:
+    return [
         Key([mod], "d", lazy.spawn(rofi), desc="ROFI"),
+
+        Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%")),
+        Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -2%")),
+        Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+
+        Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
+        Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
+        Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
+        Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
+
+        Key([mod], "s", lazy.spawn("gnome-screenshot -i")),
     ]
