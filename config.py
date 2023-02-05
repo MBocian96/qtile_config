@@ -23,6 +23,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os
+import subprocess
+
+from libqtile import hook
+
 from groups_settings import init_groups
 from keys_settings import init_keys
 from layout_settings import init_layout, init_floating
@@ -47,7 +52,7 @@ screens: list[Screen] = init_screens()
 mouse: list[Drag | Click] = init_mouse()
 
 dgroups_key_binder = None
-dgroups_app_rules = []  # type: list
+dgroups_app_rules = []
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
@@ -63,6 +68,7 @@ auto_minimize = True
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
 
+
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
 # mailing lists, GitHub issues, and other WM documentation that suggest setting
@@ -71,4 +77,10 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
+
+
 wmname = "LG3D"
