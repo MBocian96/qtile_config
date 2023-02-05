@@ -23,14 +23,13 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-from constants import mod
 from groups_settings import init_groups
 from keys_settings import init_keys
 from layout_settings import init_layout
 from libqtile import layout
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.layout.base import Layout
-from libqtile.lazy import lazy
+from mouse_settings import init_mouse
 from screen_settings import init_screens
 
 keys: list[Key] = init_keys()
@@ -49,11 +48,7 @@ extension_defaults = widget_defaults.copy()
 screens: list[Screen] = init_screens()
 
 # Drag floating layouts.
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
-]
+mouse: list[Drag | Click] = init_mouse()
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
