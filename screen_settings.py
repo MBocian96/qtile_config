@@ -39,6 +39,7 @@ def init_screen():
                 ),
                 widget.Spacer(
                     length=bar.STRETCH,
+                    background=colors["bg"],
                 ),
                 widget.Clock(
                     background=colors["bg"],
@@ -47,6 +48,7 @@ def init_screen():
                     format="%a %d  %I:%M %p",
                 ),
                 widget.Spacer(
+                    background=colors["bg"],
                     length=bar.STRETCH,
                 ),
                 widget.Wlan(
