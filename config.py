@@ -26,11 +26,10 @@
 import os
 import subprocess
 
-from libqtile import hook
-
 from groups_settings import init_groups
 from keys_settings import init_keys
 from layout_settings import init_layout, init_floating
+from libqtile import hook
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.layout.base import Layout
 from mouse_settings import init_mouse
@@ -77,10 +76,11 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
+
 @hook.subscribe.startup_once
-def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/autostart.sh'])
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.Popen([home])
 
 
 wmname = "LG3D"
