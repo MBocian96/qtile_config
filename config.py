@@ -41,7 +41,7 @@ groups: list[Group] = init_groups(keys)
 
 layouts: list[Layout] = init_layout()
 
-widget_defaults = dict(font="sans", fontsize=12, padding=3)
+widget_defaults = dict(font="Ubuntu", fontsize=12, padding=5)
 
 extension_defaults = widget_defaults.copy()
 
