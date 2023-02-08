@@ -2,7 +2,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = guess_terminal()
-rofi = "rofi -show run"
+rofi = "/home/mbocian/.config/rofi/launchers/type-11/launcher.sh"
 
 colors = {
     "accent": "#98be65",
