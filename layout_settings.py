@@ -1,3 +1,4 @@
+from constants import colors
 from libqtile import layout
 from libqtile.config import Match
 
@@ -19,7 +20,7 @@ def init_floating():
 
 def init_layout():
     return [
-        layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+        layout.Columns(border_focus_stack=[colors['accent'], colors['accent']],  border_focus=colors["accent"], border_width=1, ),
         layout.Max(),
         # Try more layouts by unleashing below layouts.
         # layout.Stack(num_stacks=2),
@@ -32,4 +33,5 @@ def init_layout():
         # layout.TreeTab(),
         # layout.VerticalTile(),
         # layout.Zoomy(),
+
     ]
