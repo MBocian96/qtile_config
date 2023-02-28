@@ -37,6 +37,7 @@ def default_screen(external_widgets=()):
                     highlight_color=[colors["bg"], colors["bg"]],
                     foreground=colors["bg"],
                     background=colors["bg"],
+					disable_drag=True,
                 ),
                 widget.Spacer(
                     length=bar.STRETCH,
