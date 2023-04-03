@@ -5,16 +5,17 @@ from libqtile.config import Group, Key, Match
 
 def init_groups(keys: list[Key]):
     workspaces = [
-        Group("1", label="Term", screen_affinity=1),
-        Group("2", label="Net", screen_affinity=1, matches=[Match(wm_class="brave-browser")]),
-        Group("3", label="Prog", screen_affinity=1, matches=[Match(wm_class="jetbrains-pycharm")]),
-        Group("4", label="Sett", screen_affinity=1, matches=[Match(wm_class="blueman-manager"), Match("gnome-control-center"),Match("Pavucontrol"), Match("pavucontrol")]),
-        Group("5", label="Pomd", screen_affinity=1, matches=[Match(wm_class="pomatez")]),
+        Group("e", label="Prog", screen_affinity=2, matches=[Match(wm_class="jetbrains-pycharm")]),
+        Group("r", label="Net", screen_affinity=2, matches=[Match(wm_class="brave-browser")]),
+        Group("t", label="Teams", screen_affinity=2, matches=[Match(wm_class="microsoft teams - preview")]),
+        Group("1", label="File", screen_affinity=2, matches=[Match(wm_class="org.gnome.Nautilus")]),
+        Group("2", label="Misc", screen_affinity=2),
+        Group("3", label="Term", screen_affinity=1),
+        Group("4", label="Sett", screen_affinity=1,
+              matches=[Match(wm_class="blueman-manager"), Match(wm_class="gnome-control-center"), Match(wm_class="Pavucontrol"),
+                       Match(wm_class="pavucontrol")]),
+        Group("5", label="Music", screen_affinity=2, matches=[Match(wm_class="spotify")]),
         Group("6", label="Misc", screen_affinity=2),
-        Group("7", label="File", screen_affinity=2, matches=[Match(wm_class="org.gnome.Nautilus")]),
-        Group("8", label="Music", screen_affinity=2, matches=[Match(wm_class="spotify")]),
-        Group("9", label="Dsc", init=False, screen_affinity=2, matches=[Match(wm_class="discord")]),
-        Group("0", label="Teams", screen_affinity=2, matches=[Match(wm_class="microsoft teams - preview")]),
     ]
     for i in workspaces:
         keys.extend(
