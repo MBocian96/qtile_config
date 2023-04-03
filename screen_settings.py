@@ -2,6 +2,23 @@ from constants import colors, font_regular, font_bold
 from libqtile import bar, widget
 from libqtile.config import Screen
 
+background_break = widget.TextBox(
+        text='◥',
+        background=colors["bg"],
+        foreground=colors["accent"],
+        padding=-5,
+        fontsize=60,
+    )
+
+accent_break = widget.TextBox(
+        text='◥',
+        background=colors["accent"],
+        foreground=colors["bg"],
+        padding=-5,
+        fontsize=60,
+    )
+
+
 
 def default_screen(external_widgets=()):
     return Screen(
@@ -47,7 +64,14 @@ def default_screen(external_widgets=()):
                     background=colors["bg"],
                     foreground=colors["accent"],
                     font=font_regular,
-                    format="%a %d  %I:%M %p",
+                    format="%a %d",
+                ),
+                widget.Clock(
+                    background=colors["bg"],
+                    foreground=colors["accent"],
+                    font=font_bold,
+                    fontsize = 15,
+                    format="%I:%M %p",
                 ),
                 widget.Spacer(
                     background=colors["bg"],
@@ -62,13 +86,7 @@ def default_screen(external_widgets=()):
                     background=colors["bg"],
                     padding=10,
                 ),
-                widget.TextBox(
-                    text='',
-                    foreground=colors["accent"],
-                    background=colors["bg"],
-                    padding=-7,
-                    fontsize=45,
-                ),
+                background_break,
                 widget.TextBox(
                     font=font_regular,
                     text='Vol:',
@@ -80,13 +98,7 @@ def default_screen(external_widgets=()):
                     foreground=colors["bg"],
                     background=colors["accent"],
                 ),
-                widget.TextBox(
-                    text='',
-                    background=colors["accent"],
-                    foreground=colors["bg"],
-                    padding=-7,
-                    fontsize=45,
-                ),
+                accent_break,
                 widget.TextBox(
                     text='Battery: ',
                     font=font_regular,
@@ -112,56 +124,31 @@ secondary_screen_additional_widgets = (
         foreground=colors["accent"],
         background=colors["bg"],
     ),
-    widget.TextBox(
-        text='',
-        background=colors["bg"],
-        foreground=colors["accent"],
-        padding=-7,
-        fontsize=45,
-    ),
+    background_break,
     widget.Memory(
         foreground=colors["bg"],
         background=colors["accent"],
         measure_mem="G"
     ),
-    widget.TextBox(
-        text='',
-        background=colors["accent"],
-        foreground=colors["bg"],
-        padding=-7,
-        fontsize=45,
-    ),
+    accent_break,
 )
 
 main_screen_additional_widgets = (
-    widget.Notify(
-        background=colors["bg"],
-        foreground=colors["accent"],
-        audiofile='/usr/share/sounds/gnome/default/alerts/string.ogg'
-    ),
-    widget.TextBox(
-        text='',
-        background=colors["bg"],
-        foreground=colors["accent"],
-        padding=-7,
-        fontsize=45,
-    ),
-    widget.Pomodoro(
-        background=colors["accent"],
-        foreground=colors["bg"],
-        color_active=colors["bg"],
-        color_break=colors["bg"],
-        color_inactive=colors["bg"]
-    ),
-    widget.TextBox(
-        text='',
-        background=colors["accent"],
-        foreground=colors["bg"],
-        padding=-7,
-        fontsize=45,
-    ),
+    # widget.Notify(
+        # background=colors["bg"],
+        # foreground=colors["accent"],
+        # audiofile='/usr/share/sounds/gnome/default/alerts/string.ogg'
+    # ),
+    # background_break,
+    # widget.Pomodoro(
+    #     background=colors["accent"],
+    #     foreground=colors["bg"],
+    #     color_active=colors["bg"],
+    #     color_break=colors["bg"],
+    #     color_inactive=colors["bg"]
+    # ),
+    # accent_break,
 )
-
 
 def init_screens():
     return [default_screen(), default_screen(main_screen_additional_widgets),
