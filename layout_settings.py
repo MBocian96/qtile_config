@@ -17,21 +17,27 @@ def init_floating():
         ]
     )
 
+layout_config = {
+    "border_focus_stack":[colors['accent'], colors['accent']],
+    "border_focus": colors["accent"],
+    "border_width": 2,
+    "margin": 8
+}
 
 def init_layout():
     return [
-        layout.Columns(border_focus_stack=[colors['accent'], colors['accent']],  border_focus=colors["accent"], border_width=1, ),
-        layout.Max(),
+        # layout.Columns(**layout_config),
+        layout.MonadTall(**layout_config ),
+        layout.Max(**layout_config),
         # Try more layouts by unleashing below layouts.
-        # layout.Stack(num_stacks=2),
-        # layout.Bsp(),
-        # layout.Matrix(),
-        # layout.MonadTall(),
-        # layout.MonadWide(),
-        # layout.RatioTile(),
-        # layout.Tile(),
-        # layout.TreeTab(),
-        # layout.VerticalTile(),
-        # layout.Zoomy(),
+         # layout.Stack(num_stacks=2),
+         # layout.Bsp(**layout_config ),
+         layout.Matrix(**layout_config ),
+         # layout.MonadWide(),
+         # layout.RatioTile(),
+         # layout.Tile(),
+         # layout.TreeTab(),
+         # layout.VerticalTile(),
+         # layout.Zoomy(),
 
     ]
