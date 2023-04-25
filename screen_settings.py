@@ -22,6 +22,8 @@ accent_break = widget.TextBox(
 
 def default_screen(external_widgets=()):
     return Screen(
+        wallpaper='~/.config/qtile/plane.jpg',
+        wallpaper_mode='stretch',
         top=bar.Bar(
             [
                 widget.Sep(
@@ -38,10 +40,10 @@ def default_screen(external_widgets=()):
                     padding_x=5,
                     borderwidth=1,
                     spacing=5,
-                    toggle=True,
+                    toggle=False,
                     use_mouse_wheel=False,
-                    urgent_alert_mode="border",
-                    urgent_border=colors["accent"],
+                    urgent_alert_method="border",
+                    urgent_border=colors["alert"],
                     urgent_text=colors["text"],
                     active=colors["text"],
                     inactive=colors["text"],
@@ -50,9 +52,9 @@ def default_screen(external_widgets=()):
                     other_screen_border=colors["bg"],
                     other_current_screen_border=colors["bg"],
                     rounded=False,
-                    highlight_method="line",
-                    highlight_color=[colors["bg"], colors["bg"]],
-                    foreground=colors["bg"],
+                    highlight_method="block",
+                    highlight_color=[colors["accent"], colors["bg"]],
+                    oreground=colors["bg"],
                     background=colors["bg"],
 					disable_drag=True,
                 ),
