@@ -8,6 +8,7 @@ colors = {
     "accent": "#98be65",
     "bg": "#1c1f24",
     "text": "#dfdfdf",
+    "alert" : "red"
 }
 
 font_bold = "Ubuntu Bold"
