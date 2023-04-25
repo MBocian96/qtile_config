@@ -2,6 +2,11 @@ from constants import mod
 from libqtile.command import lazy
 from libqtile.config import Group, Key, Match
 
+#def latest_group(qtile):
+#    qtile.current_screen.set_group(qtile.current_screen.previous_group)
+
+#def next_group(qtile):
+#    return qtile.current_screen.current_screen
 
 def init_groups(keys: list[Key]):
     workspaces = [
@@ -17,6 +22,10 @@ def init_groups(keys: list[Key]):
         Group("5", label="Music", screen_affinity=2, matches=[Match(wm_class="spotify")]),
         Group("6", label="Misc", screen_affinity=2),
     ]
+
+#    keys += [Key([mod], "[", lazy.function(latest_group))]
+#    keys += [Key([mod], "]", lazy.function(latest_group))]
+
     for i in workspaces:
         keys.extend(
             [
@@ -41,3 +50,4 @@ def init_groups(keys: list[Key]):
             ]
         )
     return workspaces
+
