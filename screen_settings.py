@@ -1,12 +1,13 @@
 from constants import colors, font_regular, font_bold
 from libqtile import bar, widget
 from libqtile.config import Screen
+import os 
 
 background_break = widget.TextBox(
         text='◥',
         background=colors["bg"],
         foreground=colors["accent"],
-        padding=-5,
+        padding=-15,
         fontsize=60,
     )
 
@@ -14,7 +15,7 @@ accent_break = widget.TextBox(
         text='◥',
         background=colors["accent"],
         foreground=colors["bg"],
-        padding=-5,
+        padding=-15,
         fontsize=60,
     )
 
@@ -26,6 +27,13 @@ def default_screen(external_widgets=()):
         wallpaper_mode='stretch',
         top=bar.Bar(
             [
+                 widget.CurrentLayoutIcon(
+                   custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                   foreground = colors["accent"],
+                   background = colors["bg"],
+                   padding = 0,
+                   scale = 0.7
+                   ),
                 widget.Sep(
                     linewidth=0,
                     padding=10,
@@ -34,7 +42,7 @@ def default_screen(external_widgets=()):
                 ),
                 widget.GroupBox(
                     font=font_bold,
-                    margin_y=5,
+                    margin_y=4,
                     margin_x=0,
                     padding_y=5,
                     padding_x=5,
@@ -53,8 +61,8 @@ def default_screen(external_widgets=()):
                     other_current_screen_border=colors["bg"],
                     rounded=False,
                     highlight_method="block",
-                    highlight_color=[colors["accent"], colors["bg"]],
-                    oreground=colors["bg"],
+                    highlight_color=[colors["bg"], colors["bg"]],
+                    foreground=colors["bg"],
                     background=colors["bg"],
 					disable_drag=True,
                 ),
