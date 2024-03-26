@@ -21,7 +21,7 @@ def init_groups(keys: list[Key]):
         Group("v", label="v: Music",  screen_affinity=2, matches=[Match(wm_class="spotify")]),
         Group("b", label="b: Sett",   screen_affinity=2,
               matches=[Match(wm_class="blueman-manager"), Match(wm_class="gnome-control-center"), Match(wm_class="Pavucontrol"),
-                       Match(wm_class="pavucontrol")]),
+                       Match(wm_class="Solaar"), Match(wm_class="pavucontrol")]),
     ]
 #    keys += [Key([mod], "[", lazy.function(latest_group))]
 #    keys += [Key([mod], "]", lazy.function(latest_group))]

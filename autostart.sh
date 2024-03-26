@@ -7,4 +7,6 @@ nautilus &
 pavucontrol &
 blueman-manager &
 redshift -O 3400 &
-setxkbmap pl 
+setxkbmap pl &
+org.zim_wiki.Zim &
+solaar &
