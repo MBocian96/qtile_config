@@ -1,7 +1,7 @@
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = guess_terminal()
+terminal = "gnome-terminal"
 rofi = "/home/mbocian/.config/rofi/launchers/type-11/launcher.sh"
 
 colors = {
